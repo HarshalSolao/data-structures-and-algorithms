@@ -1,0 +1,8 @@
+# Java / Maven
+*.class
+target/
+
+# IntelliJ / VS Code (if you prefer per‑project ignore)
+.idea/
+.vscode/
+*.iml
