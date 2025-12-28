@@ -135,5 +135,5 @@ Legend:
 - [ ] Z Algorithm
 - [ ] Longest Palindromic Substring
 
-#Reference Structure
+## Reference Structure (For future folders)
 ![img.png](img.png)
