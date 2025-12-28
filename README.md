@@ -134,3 +134,6 @@ Legend:
 - [ ] KMP Algorithm
 - [ ] Z Algorithm
 - [ ] Longest Palindromic Substring
+
+#Reference Structure
+![img.png](img.png)
