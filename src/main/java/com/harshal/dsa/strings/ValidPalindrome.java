@@ -6,9 +6,30 @@ import java.util.Set;
 //https://leetcode.com/problems/valid-palindrome/description/
 public class ValidPalindrome {
     public static void main(String[] args) {
-        var s = "0P";
-        System.out.println(isPalindrome1(s));
+        var s = "har_sa_rah";
+        System.out.println(isPalindrome2(s));
     }
+
+    //This is without extra space and TC is O(n)
+    public static boolean isPalindrome2(String s) {
+        int i = 0, j = s.length() - 1;
+        while (i < j) {
+            char ci = s.charAt(i);
+            char cj = s.charAt(j);
+            if (!Character.isLetterOrDigit(ci)) {
+                i++;
+            } else if (!Character.isLetterOrDigit(cj)) {
+                j--;
+            } else if (Character.toLowerCase(ci) == Character.toLowerCase(cj)) {
+                i++;
+                j--;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     public static boolean isPalindrome1(String s) {
         StringBuilder filtered = new StringBuilder();
