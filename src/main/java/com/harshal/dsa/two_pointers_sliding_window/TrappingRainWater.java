@@ -1,8 +1,5 @@
 package com.harshal.dsa.two_pointers_sliding_window;
 
-import java.util.Arrays;
-import java.util.Map;
-
 //https://leetcode.com/problems/trapping-rain-water/description/
 public class TrappingRainWater {
     public static void main(String[] args) {
