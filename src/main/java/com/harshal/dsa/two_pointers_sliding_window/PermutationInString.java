@@ -7,7 +7,7 @@ public class PermutationInString {
     public static void main(String[] args) {
         var s1 = "ab";
         var s2 = "eidbaooo";
-        System.out.println(checkInclusion(s1, s2));
+        System.out.println(checkInclusion_New(s1, s2));
     }
 
     public static boolean checkInclusion(String s1, String s2) {
@@ -32,5 +32,34 @@ public class PermutationInString {
             }
         }
         return false;
+    }
+
+    public static boolean checkInclusion_New(String s1, String s2) {
+        if (s1.length() > s2.length()) return false;
+        int[] hashS = new int[26];
+        int[] hashW = new int[26];
+        int windowLength = s1.length();
+
+        for (int i = 0; i < windowLength; i++) {
+            hashS[s1.charAt(i) - 'a']++;
+            hashW[s2.charAt(i) - 'a']++;
+        }
+        int i = 0, j = windowLength - 1;
+        while (j < s2.length()) {
+            if (isHashSame(hashS, hashW)) return true;
+            hashW[s2.charAt(i) - 'a']--;
+            i++;
+            j++;
+            if (j < s2.length())
+                hashW[s2.charAt(j) - 'a']++;
+        }
+        return false;
+    }
+
+    private static boolean isHashSame(int[] a, int[] b) {
+        for (int i = 0; i < 26; i++) {
+            if (a[i] != b[i]) return false;
+        }
+        return true;
     }
 }
